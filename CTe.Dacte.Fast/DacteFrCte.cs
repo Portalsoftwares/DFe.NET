@@ -37,6 +37,8 @@ using FastReport.Export.Pdf;
 using CTe.Dacte.Base;
 using CTe.Classes;
 using System;
+using CTe.CTeOSDocumento.CTe.CTeOS.Retorno;
+using System.Collections.Generic;
 
 namespace CTe.Dacte.Fast
 {
@@ -62,7 +64,13 @@ namespace CTe.Dacte.Fast
         public void RegisterData(cteProc proc)
         {
             Relatorio.RegisterData(new[] { proc }, "cteProc", 20);
-            Relatorio.GetDataSource("cteProc").Enabled = true;            
+            Relatorio.GetDataSource("cteProc").Enabled = true;
+        }
+
+        public void RegisterDataOS(cteOSProc proc)
+        {
+            Relatorio.RegisterData(new[] { proc }, "cteOSProc", 20);
+            Relatorio.GetDataSource("cteOSProc").Enabled = true;
         }
 
         public void Configurar(ConfiguracaoDacte config)
@@ -84,6 +92,171 @@ namespace CTe.Dacte.Fast
                 Relatorio.Load(new MemoryStream(Properties.Resources.CTeRetrato));
             Configurar(config);
         }
+
+        public DacteFrCte(cteOSProc proc, ConfiguracaoDacte config, string arquivoRelatorio)
+        {
+            Relatorio = new Report();
+            RegisterDataOS(proc);
+            if (!string.IsNullOrEmpty(arquivoRelatorio))
+                Relatorio.Load(arquivoRelatorio);
+            else
+                Relatorio.Load(new MemoryStream(Properties.Resources.CTeRetrato));
+            Configurar(config);
+
+        }
+
+        /// <summary>
+        /// Abre a janela de visualização do DACTe
+        /// </summary>
+        /// <param name="modal">Se true, exibe a visualização em Modal. O modo modal está disponível apenas para WinForms</param>
+        public void Visualizar(bool modal = true)
+        {
+            Relatorio.Show(modal);
+        }
+
+        /// <summary>
+        ///  Abre a janela de visualização do design do DACTe
+        /// Chame esse método se desja fazer alterações no design do DAMDFe em modo run-time
+        /// </summary>
+        /// <param name="modal">Se true, exibe a visualização em Modal. O modo modal está disponível apenas para WinForms</param>
+        public void ExibirDesign(bool modal = false)
+        {
+            Relatorio.Design(modal);
+        }
+
+        /// <summary>
+        /// Envia a impressão do DACTe diretamente para a impressora
+        /// </summary>
+        /// <param name="exibirDialogo">Se true exibe o diálogo Imprimindo...</param>
+        /// <param name="impressora">Passe a string com o nome da impressora para imprimir diretamente em determinada impressora. Caso contrário, a impressão será feita na impressora que estiver como padrão</param>
+        public void Imprimir(bool exibirDialogo = true, string impressora = "")
+        {
+            Relatorio.PrintSettings.ShowDialog = exibirDialogo;
+            Relatorio.PrintSettings.Printer = impressora;
+            Relatorio.Print();
+        }
+
+        /// <summary>
+        /// Converte o DACTe para PDF e salva-o no caminho/arquivo indicado
+        /// </summary>
+        /// <param name="arquivo">Caminho/arquivo onde deve ser salvo o PDF do DACTe</param>
+        public void ExportarPdf(string arquivo)
+        {
+            Relatorio.Prepare();
+            Relatorio.Export(new PDFExport(), arquivo);
+        }
+
+        /// <summary>
+        /// Converte o DACTe para PDF e copia para o stream
+        /// </summary>
+        /// <param name="outputStream">Variável do tipo Stream para output</param>
+        public void ExportarPdf(Stream outputStream)
+        {
+            Relatorio.Prepare();
+            Relatorio.Export(new PDFExport(), outputStream);
+            outputStream.Position = 0;
+        }
+
+        /// <summary>
+        /// Converte o DACTe para PDF e salva-o no caminho/arquivo indicado
+        /// </summary>
+        /// <param name="arquivo">Caminho/arquivo onde deve ser salvo o PDF do DACTe</param>
+        /// <param name="exportBase">Instancia do tipo de exportacao do FastReport</param>
+        public void ExportarPdf(string arquivo, FastReport.Export.ExportBase exportBase)
+        {
+            if (exportBase == null)
+                throw new NullReferenceException("exportBase deve ter um objeto instanciado, tente 'new PDFExport()'");
+
+            Relatorio.Prepare();
+            Relatorio.Export(exportBase, arquivo);
+        }
+
+        /// <summary>
+        /// Converte o DACTe para PDF e copia para o stream
+        /// </summary>
+        /// <param name="outputStream">Variável do tipo Stream para output</param>
+        /// <param name="exportBase">Instancia do tipo de exportacao do FastReport</param>
+        public void ExportarPdf(Stream outputStream, FastReport.Export.ExportBase exportBase)
+        {
+            if (exportBase == null)
+                throw new NullReferenceException("exportBase deve ter um objeto instanciado, tente 'new PDFExport()'");
+
+            Relatorio.Prepare();
+            Relatorio.Export(exportBase, outputStream);
+            outputStream.Position = 0;
+        }
+    }
+
+
+
+    public class DacteFrCteOs
+    {
+        protected Report Relatorio;
+
+        public DacteFrCteOs()
+        {
+            Relatorio = new Report();
+        }
+
+        public void LoadReport(string arquivoRelatorio)
+        {
+            Relatorio.Load(arquivoRelatorio);
+        }
+
+        public void LoadReport(MemoryStream stream)
+        {
+            Relatorio.Load(stream);
+        }
+
+        public void RegisterData(cteOSProc proc)
+        {
+            Relatorio.RegisterData(new[] { proc }, "cteOSProc", 20);
+            Relatorio.GetDataSource("cteOSProc").Enabled = true;
+        }
+
+        public void RegisterDataOS(cteOSProc proc)
+        {
+            Relatorio.RegisterData(new[] { proc }, "cteOSProc", 20);
+            Relatorio.GetDataSource("cteOSProc").Enabled = true;
+        }
+
+        public void Configurar(ConfiguracaoDacteOs config)
+        {
+            Relatorio.SetParameterValue("DoocumentoCancelado", config.DocumentoCancelado);
+            Relatorio.SetParameterValue("Desenvolvedor", config.Desenvolvedor);
+            Relatorio.SetParameterValue("QuebrarLinhasObservacao", config.QuebrarLinhasObservacao);
+            if (Relatorio.FindObject("poEmitLogo") != null)
+                ((PictureObject)Relatorio.FindObject("poEmitLogo")).Image = config.ObterLogo();
+        }
+
+        public DacteFrCteOs(cteOSProc proc, ConfiguracaoDacteOs config, string arquivoRelatorio = "")
+        {
+            List<cteOSProc> ctes = new List<cteOSProc>();
+            ctes.Add(proc);
+
+            Relatorio = new Report();
+            RegisterData(proc);
+            var pdfExport = new PDFExport();
+
+            if (!string.IsNullOrEmpty(arquivoRelatorio))
+            {
+                Relatorio.Load(arquivoRelatorio);
+
+            }
+            else
+            {
+                Relatorio.Load(new MemoryStream(Properties.Resources.CTeOSRetrato));
+                // salva aqui
+                //Relatorio.Dictionary.RegisterBusinessObject(ctes, "cteOSProc", 20, true);
+                //Relatorio.Save(@"c:\\temp\\cteOsNew.frx");
+                //Relatorio.Prepare();
+                //Relatorio.Export(pdfExport, @"c:\\temp\\meurelatorio.pdf");
+                //Relatorio.SavePrepared(@"c:\\temp\\arquivoFrx.frx");
+            }
+            Configurar(config);
+        }
+
+
 
         /// <summary>
         /// Abre a janela de visualização do DACTe

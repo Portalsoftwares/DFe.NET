@@ -64,6 +64,8 @@ namespace CTe.Classes
 
                 if(value.Equals("3.00"))
                     versao = Servicos.Tipos.versao.ve300;
+
+
             }
         }
 

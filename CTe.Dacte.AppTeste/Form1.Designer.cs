@@ -46,6 +46,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.chbQuebrarLinhaObservacao = new System.Windows.Forms.CheckBox();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogotipo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -147,7 +148,7 @@
             // 
             this.txtArquivo.Location = new System.Drawing.Point(227, 73);
             this.txtArquivo.Name = "txtArquivo";
-            this.txtArquivo.Size = new System.Drawing.Size(269, 20);
+            this.txtArquivo.Size = new System.Drawing.Size(372, 20);
             this.txtArquivo.TabIndex = 23;
             // 
             // label3
@@ -161,7 +162,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(498, 71);
+            this.button6.Location = new System.Drawing.Point(605, 71);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(27, 22);
             this.button6.TabIndex = 24;
@@ -225,11 +226,22 @@
             this.chbQuebrarLinhaObservacao.Text = "Quebrar linha na observação";
             this.chbQuebrarLinhaObservacao.UseVisualStyleBackColor = true;
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(505, 144);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(127, 28);
+            this.button10.TabIndex = 27;
+            this.button10.Text = "Visualizar CTEOs";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 241);
+            this.ClientSize = new System.Drawing.Size(767, 246);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.chbQuebrarLinhaObservacao);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button6);
@@ -246,6 +258,7 @@
             this.Controls.Add(this.chbCancelado);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogotipo)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -274,6 +287,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.CheckBox chbQuebrarLinhaObservacao;
+        private System.Windows.Forms.Button button10;
     }
 }
 

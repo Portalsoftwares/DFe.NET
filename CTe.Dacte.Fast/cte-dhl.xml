@@ -1,0 +1,255 @@
+<cteProc versao="3.00"
+    xmlns="http://www.portalfiscal.inf.br/cte">
+    <CTe
+        xmlns="http://www.portalfiscal.inf.br/cte">
+        <infCte Id="CTe42231090739624001432570040004099051029370159" versao="3.00">
+            <ide>
+                <cUF>42</cUF>
+                <cCT>02937015</cCT>
+                <CFOP>5353</CFOP>
+                <natOp>Transp a est comercial</natOp>
+                <mod>57</mod>
+                <serie>4</serie>
+                <nCT>409905</nCT>
+                <dhEmi>2023-10-09T15:05:11-03:00</dhEmi>
+                <tpImp>1</tpImp>
+                <tpEmis>1</tpEmis>
+                <cDV>9</cDV>
+                <tpAmb>1</tpAmb>
+                <tpCTe>0</tpCTe>
+                <procEmi>0</procEmi>
+                <verProc>1.0</verProc>
+                <cMunEnv>4216602</cMunEnv>
+                <xMunEnv>SAO JOSE</xMunEnv>
+                <UFEnv>SC</UFEnv>
+                <modal>01</modal>
+                <tpServ>0</tpServ>
+                <cMunIni>4219309</cMunIni>
+                <xMunIni>VIDEIRA</xMunIni>
+                <UFIni>SC</UFIni>
+                <cMunFim>4202404</cMunFim>
+                <xMunFim>BLUMENAU</xMunFim>
+                <UFFim>SC</UFFim>
+                <retira>1</retira>
+                <indIEToma>1</indIEToma>
+                <toma3>
+                    <toma>3</toma>
+                </toma3>
+            </ide>
+            <compl>
+                <Entrega>
+                    <comData>
+                        <tpPer>2</tpPer>
+                        <dProg>2023-10-10</dProg>
+                    </comData>
+                    <semHora>
+                        <tpHor>0</tpHor>
+                    </semHora>
+                </Entrega>
+                <xObs>ATENCAO - RETORNAR VIA DACTE E DOCUMENTOS ANEXOS PREENCHIDOS CST: 00 N PEDIDO: 6183838371. - Apolice seguro: 23.54.0030692.14 - Seguradora: 03502099000118 CHUBB SEGUROS BRASIL S.A</xObs>
+                <ObsCont xCampo="1">
+                    <xTexto>ATENCAO - RETORNAR VIA DACTE E DOCUMENTOS ANEXOS PREENCHIDOS</xTexto>
+                </ObsCont>
+                <ObsCont xCampo="2">
+                    <xTexto>CST: 00 N PEDIDO: 6183838371. - Apolice seguro: 23.54.0030692.14 - Seguradora: 03502099000118 CHUBB SEGUROS BRASIL S.A</xTexto>
+                </ObsCont>
+                <ObsCont xCampo="RESPSEG">
+                    <xTexto>90739624001432</xTexto>
+                </ObsCont>
+                <ObsCont xCampo="4">
+                    <xTexto>TABELA: COMBINADA CO204309 - ROTA: CTBI/BNUP - TARIF: 050 - TIPO MERCAD: DIVERSOS. Conferente: DANIEL SILVEIRA</xTexto>
+                </ObsCont>
+                <ObsCont xCampo="5">
+                    <xTexto>Tratamento de dados pessoais pode ser dado para execucao de contrato de transporte (LGPD art. 7, V).</xTexto>
+                </ObsCont>
+            </compl>
+            <emit>
+                <CNPJ>90739624001432</CNPJ>
+                <IE>256069298</IE>
+                <xNome>TRANSPORTES GRITSCH LTDA</xNome>
+                <enderEmit>
+                    <xLgr>RUA GOV. JOSE BOABAID</xLgr>
+                    <nro>0</nro>
+                    <xBairro>DISTRITO INDUSTRIAL</xBairro>
+                    <cMun>4216602</cMun>
+                    <xMun>SAO JOSE</xMun>
+                    <CEP>88104750</CEP>
+                    <UF>SC</UF>
+                    <fone>4832579051</fone>
+                </enderEmit>
+                <CRT>3</CRT>
+            </emit>
+            <rem>
+                <CNPJ>22400525000157</CNPJ>
+                <xNome>JTK NEGOCIOS ONLINE EIRELE</xNome>
+                <fone>4935621644</fone>
+                <enderReme>
+                    <xLgr>RUA GUILHERME BRANDALISE</xLgr>
+                    <nro>131</nro>
+                    <xBairro>UNIVERSITARIO</xBairro>
+                    <cMun>4219309</cMun>
+                    <xMun>VIDEIRA</xMun>
+                    <CEP>89560039</CEP>
+                    <UF>SC</UF>
+                    <cPais>1058</cPais>
+                    <xPais>BRASIL</xPais>
+                </enderReme>
+            </rem>
+            <exped>
+                <CNPJ>22400525000157</CNPJ>
+                <xNome>JTK NEGOCIOS ONLINE EIRELE</xNome>
+                <fone>4935621644</fone>
+                <enderExped>
+                    <xLgr>RUA GUILHERME BRANDALISE</xLgr>
+                    <nro>131</nro>
+                    <xBairro>UNIVERSITARIO</xBairro>
+                    <cMun>4219309</cMun>
+                    <xMun>VIDEIRA</xMun>
+                    <CEP>89560039</CEP>
+                    <UF>SC</UF>
+                    <cPais>1058</cPais>
+                    <xPais>BRASIL</xPais>
+                </enderExped>
+            </exped>
+            <receb>
+                <CPF>01536472999</CPF>
+                <xNome>DHL BLUMENAU</xNome>
+                <fone>4730355860</fone>
+                <enderReceb>
+                    <xLgr>R FRITZ KOEGLER</xLgr>
+                    <nro>917</nro>
+                    <xBairro>FORTALEZA</xBairro>
+                    <cMun>4202404</cMun>
+                    <xMun>BLUMENAU</xMun>
+                    <CEP>89066050</CEP>
+                    <UF>SC</UF>
+                    <cPais>1058</cPais>
+                    <xPais>BRASIL</xPais>
+                </enderReceb>
+            </receb>
+            <dest>
+                <CNPJ>58890252000113</CNPJ>
+                <IE>109746831115</IE>
+                <xNome>DHL EXPRESS (BRAZIL) LTDA</xNome>
+                <enderDest>
+                    <xLgr>AVENIDA MANUEL BANDEIRA</xLgr>
+                    <nro>291</nro>
+                    <xCpl>ESCRITORIOS 32 41 42 43 E 44 BLOCO D</xCpl>
+                    <xBairro>VILA LEOPOLDINA</xBairro>
+                    <cMun>3550308</cMun>
+                    <xMun>SAO PAULO</xMun>
+                    <CEP>05317020</CEP>
+                    <UF>SP</UF>
+                    <cPais>1058</cPais>
+                    <xPais>BRASIL</xPais>
+                </enderDest>
+            </dest>
+            <vPrest>
+                <vTPrest>25.75</vTPrest>
+                <vRec>25.75</vRec>
+                <Comp>
+                    <xNome>FRETE PESO</xNome>
+                    <vComp>25.75</vComp>
+                </Comp>
+            </vPrest>
+            <imp>
+                <ICMS>
+                    <ICMS00>
+                        <CST>00</CST>
+                        <vBC>25.75</vBC>
+                        <pICMS>17.00</pICMS>
+                        <vICMS>4.38</vICMS>
+                    </ICMS00>
+                </ICMS>
+                <vTotTrib>4.38</vTotTrib>
+            </imp>
+            <infCTeNorm>
+                <infCarga>
+                    <vCarga>1.00</vCarga>
+                    <proPred>DIVERSOS</proPred>
+                    <infQ>
+                        <cUnid>03</cUnid>
+                        <tpMed>UNIDADE</tpMed>
+                        <qCarga>1</qCarga>
+                    </infQ>
+                    <infQ>
+                        <cUnid>03</cUnid>
+                        <tpMed>PARES</tpMed>
+                        <qCarga>0</qCarga>
+                    </infQ>
+                    <infQ>
+                        <cUnid>00</cUnid>
+                        <tpMed>M3</tpMed>
+                        <qCarga>0.0000</qCarga>
+                    </infQ>
+                    <infQ>
+                        <cUnid>01</cUnid>
+                        <tpMed>PESO REAL</tpMed>
+                        <qCarga>1.0000</qCarga>
+                    </infQ>
+                    <infQ>
+                        <cUnid>01</cUnid>
+                        <tpMed>PESO BASE DE CALCULO</tpMed>
+                        <qCarga>1.0000</qCarga>
+                    </infQ>
+                    <vCargaAverb>1.00</vCargaAverb>
+                </infCarga>
+                <infDoc>
+                    <infOutros>
+                        <tpDoc>99</tpDoc>
+                        <descOutros>Outros</descOutros>
+                        <nDoc>618383837</nDoc>
+                    </infOutros>
+                </infDoc>
+                <infModal versaoModal="3.00">
+                    <rodo>
+                        <RNTRC>00056250</RNTRC>
+                    </rodo>
+                </infModal>
+            </infCTeNorm>
+            <infRespTec>
+                <CNPJ>01446320000132</CNPJ>
+                <xContato>Suporte SSW</xContato>
+                <email>suporte@ssw.inf.br</email>
+                <fone>04133360877</fone>
+            </infRespTec>
+        </infCte>
+        <infCTeSupl>
+            <qrCodCTe>https://dfe-portal.svrs.rs.gov.br/cte/qrCode?chCTe=42231090739624001432570040004099051029370159&amp;tpAmb=1</qrCodCTe>
+        </infCTeSupl>
+        <Signature
+            xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+                <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+                <Reference URI="#CTe42231090739624001432570040004099051029370159">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                        <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                    <DigestValue>6aB0VhpE0B24MrNl3W/EXfGZXO0=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>coHz1g0VN7j4dfooftCYO6HJ8AWJ0pjdnOS+xi9sW+NUFqCI/Xvo/E70vrzgGxblxnL/u0GCiv8WxE1ubagy2D0XaV+DH5PlR5hpdYyzkIbo51xxYaKVtDLCFkmjOC/V0W7fISSqY8nSipaCDhCSWx26XEjdpCkwsYzYxPuwPPHEaVc0dlUQtvhWA5QZgAEcsSEx/Spq6KioD0z+CCUgbBatxwcB42dSIUqNLNH1KREcAyFcetUdaBtKsTHz+ntdbZledK8HyNm0Bme3zqkjRjhp1u79QhqJHrp6Ss4s6yfs0P4QTfk7cmFLh8foeYSL4iWI5QZrKf2bJTypENs8Pw==</SignatureValue>
+            <KeyInfo>
+                <X509Data>
+                    <X509Certificate>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</X509Certificate>
+                </X509Data>
+            </KeyInfo>
+        </Signature>
+    </CTe>
+    <protCTe versao="3.00"
+        xmlns="http://www.portalfiscal.inf.br/cte">
+        <infProt Id="CTe342230254606046">
+            <tpAmb>1</tpAmb>
+            <verAplic>RS20230701144139</verAplic>
+            <chCTe>42231090739624001432570040004099051029370159</chCTe>
+            <dhRecbto>2023-10-09T15:05:12-03:00</dhRecbto>
+            <nProt>342230254606046</nProt>
+            <digVal>6aB0VhpE0B24MrNl3W/EXfGZXO0=</digVal>
+            <cStat>100</cStat>
+            <xMotivo>Autorizado o uso do CTe</xMotivo>
+        </infProt>
+    </protCTe>
+</cteProc>

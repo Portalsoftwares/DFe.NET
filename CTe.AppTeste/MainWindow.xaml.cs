@@ -152,7 +152,8 @@ namespace CTe.AppTeste
 
         private void EmitirCteOs_Click(object sender, RoutedEventArgs e)
         {
-            _model.EmitirCteOs();
+            // _model.EmitirCteOs();
+           this.LoadXmlCteOs_Click();
         }
 
         private void LoadXmlCte_Click(object sender, RoutedEventArgs e)
@@ -174,6 +175,28 @@ namespace CTe.AppTeste
             }
 
             _model.LoadXmlCTe(xml);
+        }
+
+
+        private void LoadXmlCteOs_Click ()
+        {
+            string xml = string.Empty;
+
+            var janelaArquivo = new OpenFileDialog
+            {
+                Filter = "Xml (*.xml)|*.xml"
+            };
+            if (janelaArquivo.ShowDialog() == true)
+            {
+                xml = janelaArquivo.FileName;
+            }
+
+            if (string.IsNullOrWhiteSpace(xml))
+            {
+                MessageBox.Show("Selecione um xml");
+            }
+
+            _model.LoadXmlCTeOS(xml);
         }
     }
 }

@@ -82,11 +82,15 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CTEosNew.frx" />
+    <None Include="CTeOSRetrato.frx" />
     <None Include="Resources\CTeEvento.frx" />
     <None Include="Resources\CTeRetrato.frx" />
+    <None Include="Resources\CTOs.frx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -84,6 +84,8 @@ using infServico = CTe.Classes.Informacoes.infCTeNormal.infServico;
 using infTribFed = CTe.Classes.Informacoes.Impostos.infTribFed;
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 using rodoOS = CTe.Classes.Informacoes.infCTeNormal.infModals.rodoOS;
+using CTe.CTeOSDocumento.CTe.CTeOS.Retorno;
+using imp = CTe.CTeOSDocumento.CTe.CTeOS.Informacoes.Impostos.imp;
 
 namespace CTe.AppTeste
 {
@@ -801,7 +803,7 @@ namespace CTe.AppTeste
         {
             var config = new ConfiguracaoDao().BuscarConfiguracao();
             CarregarConfiguracoes(config);
-                       
+
             var cnpj = (InputBoxTuche("CNPJ Tomador"));
             var chave = (InputBoxTuche("Chave CTe"));
             var sequenciaEvento = int.Parse(InputBoxTuche("Sequencia Evento"));
@@ -999,7 +1001,7 @@ namespace CTe.AppTeste
 
             #region imp
 
-            cteEletronico.infCte.imp = new imp();
+            cteEletronico.infCte.imp = new Classes.Informacoes.Impostos.imp();
             cteEletronico.infCte.imp.ICMS = new ICMS();
 
             var icmsSimplesNacional = new ICMSSN();
@@ -1245,7 +1247,7 @@ namespace CTe.AppTeste
 
             #region imp
 
-            cteEletronico.infCte.imp = new imp();
+            cteEletronico.infCte.imp = new CTe.Classes.Informacoes.Impostos.imp();
             cteEletronico.infCte.imp.ICMS = new ICMS();
 
             var icmsSimplesNacional = new ICMSSN();
@@ -1343,7 +1345,7 @@ namespace CTe.AppTeste
 
         public void DistribuicaoDFe()
         {
-            
+
             var config = new ConfiguracaoDao().BuscarConfiguracao();
             CarregarConfiguracoes(config);
 
@@ -1470,14 +1472,14 @@ namespace CTe.AppTeste
             #region imp
 
             cteOS.InfCte.imp = new impOs();
-            cteOS.InfCte.imp.ICMS = new ICMS();
+            cteOS.InfCte.imp.ICMS = new CTe.CTeOSDocumento.CTe.CTeOS.Informacoes.Impostos.Tributacao.ICMS();
 
             var icmsSimplesNacional = new ICMSSN();
 
             cteOS.InfCte.imp.ICMS.TipoICMS = icmsSimplesNacional;
             icmsSimplesNacional.CST = CST.ICMS90;
 
-            cteOS.InfCte.imp.infTribFed = new infTribFed();
+            cteOS.InfCte.imp.infTribFed = new CTe.CTeOSDocumento.CTe.CTeOS.Informacoes.Impostos.infTribFed();
             cteOS.InfCte.imp.infTribFed.vINSS = 20.00m;
 
             #endregion
@@ -1517,6 +1519,20 @@ namespace CTe.AppTeste
             try
             {
                 var proc = cteProc.LoadXmlArquivo(xml);
+
+                MessageBoxTuche("Load feito com sucesso");
+            }
+            catch (Exception e)
+            {
+                MessageBoxTuche(e.Message);
+            }
+        }
+
+        public void LoadXmlCTeOS(string xml)
+        {
+            try
+            {
+                var proc = cteOSProc.LoadXmlArquivo(xml);
 
                 MessageBoxTuche("Load feito com sucesso");
             }

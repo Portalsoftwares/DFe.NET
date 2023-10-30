@@ -1,12 +1,12 @@
-﻿using CTe.Classes.Informacoes.Impostos;
+﻿using CTe.CTeOSDocumento.CTe.CTeOS.Informacoes.Impostos;
 using CTe.Classes.Informacoes.Impostos.Tributacao;
-using DFe.Classes;
 
+using DFe.Classes;
 namespace CTe.CTeOSDocumento.CTe.CTeOS.Informacoes.Impostos
 {
     public class impOs
     {
-        public ICMS ICMS { get; set; }
+        public Tributacao.ICMS ICMS { get; set; }
 
         private decimal? _vTotTrib;
         public decimal? vTotTrib

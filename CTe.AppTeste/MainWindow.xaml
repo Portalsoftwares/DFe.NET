@@ -243,11 +243,26 @@
                     <Button Grid.Row="4" Grid.Column="0" Click="EventoDesacordoCTe_Click" Grid.ColumnSpan="2">Evento Desacordo CT-e</Button>
                     <Button Grid.Row="5" Grid.Column="0" Click="EmitirCteOs_Click" Grid.ColumnSpan="2">Emitir CT-e OS</Button>
                     <Button Grid.Row="5" Grid.Column="2" Click="LoadXmlCte_Click" Grid.ColumnSpan="2">Load Xml CT-e</Button>
+                   
 
-                    <TabControl Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3">
+                    <TabControl Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5">
+                        <TabControl.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform AngleX="-0.205"/>
+                                <RotateTransform/>
+                                <TranslateTransform X="0.996"/>
+                            </TransformGroup>
+                        </TabControl.RenderTransform>
                         <TabItem Header="XmlEnvio">
                             <Grid Background="#FFE5E5E5">
-                                <WebBrowser x:Name="WebXmlEnvio" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="46*"/>
+                                    <ColumnDefinition Width="14*"/>
+                                    <ColumnDefinition Width="579*"/>
+                                    <ColumnDefinition Width="120*"/>
+                                </Grid.ColumnDefinitions>
+                                <WebBrowser x:Name="WebXmlEnvio" Margin="10,47,0,0" Grid.ColumnSpan="4" />
                             </Grid>
                         </TabItem>
                         <TabItem Header="XmlRetorno">

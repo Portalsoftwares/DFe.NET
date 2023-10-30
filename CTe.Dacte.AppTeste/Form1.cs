@@ -1,9 +1,12 @@
 ﻿using CTe.Classes;
 using CTe.Classes.Servicos.Consulta;
+using CTe.CTeOSClasses;
+using CTe.CTeOSDocumento.CTe.CTeOS.Retorno;
 using CTe.Dacte.Base;
 using CTe.Dacte.Fast;
 using DFe.Utils;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -46,6 +49,59 @@ namespace CTe.Dacte.AppTeste
         private void button3_Click(object sender, EventArgs e)
         {
             pcbLogotipo.Image = null;
+        }
+
+        public DacteFrCteOs GetReportOS()
+        {
+            cteOSProc cte = null;
+           
+            try
+            {
+                var dlg = new OpenFileDialog
+                {
+                    Title = "Carregar xml CTeProc",
+                    FileName = "",
+                    DefaultExt = ".xml",
+                    Filter = "Arquivo XML(.xml) | *.xml"
+                };
+                dlg.ShowDialog();
+                string xml = dlg.FileName;
+                if (!File.Exists(xml))
+                    return null;
+
+                try
+                {
+                    cte = FuncoesXml.ArquivoXmlParaClasse<cteOSProc>(xml);
+                }
+                catch
+                {
+                    cte = new cteOSProc() { CTeOS = FuncoesXml.ArquivoXmlParaClasse<CTeOS>(xml), protCTe = new Classes.Protocolo.protCTe() };
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Configurar impressão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+
+            try
+            {
+                var rpt = new DacteFrCteOs(cte,
+                    new ConfiguracaoDacteOs()
+                    {
+                        Logomarca = ImageToByte(pcbLogotipo.Image),
+                        DocumentoCancelado = chbCancelado.Checked,
+                        Desenvolvedor = txtDesenvolvedor.Text,
+                        QuebrarLinhasObservacao = chbQuebrarLinhaObservacao.Checked
+                    },
+                    arquivoRelatorio: txtArquivo.Text);
+                return rpt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Configurar impressão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
         }
 
         public DacteFrCte GetReport()
@@ -167,7 +223,13 @@ namespace CTe.Dacte.AppTeste
             if (dacte != null)
                 dacte.Visualizar(true);
         }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            var dacte = GetReportOS();
+            if (dacte != null)
+                dacte.Visualizar(true);
 
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             var dacte = GetReport();
@@ -217,5 +279,7 @@ namespace CTe.Dacte.AppTeste
             if (dacte != null)
                 dacte.ExibirDesign();
         }
+
+       
     }
 }
