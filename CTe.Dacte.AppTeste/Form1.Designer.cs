@@ -240,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 246);
+            this.ClientSize = new System.Drawing.Size(777, 322);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.chbQuebrarLinhaObservacao);
             this.Controls.Add(this.groupBox1);
@@ -259,7 +259,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "CTE Reports";
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogotipo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

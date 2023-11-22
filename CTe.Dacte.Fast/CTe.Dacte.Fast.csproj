@@ -87,8 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CTEosNew.frx" />
-    <None Include="CTeOSRetrato.frx" />
+    <None Include="CTeOSRetrato-1.frx" />
     <None Include="Resources\CTeEvento.frx" />
+    <None Include="Resources\CTeOSRetrato.frx" />
     <None Include="Resources\CTeRetrato.frx" />
     <None Include="Resources\CTOs.frx" />
   </ItemGroup>

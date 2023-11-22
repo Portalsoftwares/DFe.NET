@@ -171,6 +171,7 @@ namespace CTe.Classes.Servicos.Tipos
     ///     Versão do leiaute
     ///     <para>2.00 - Versão 2.00;</para>
     ///     <para>3.00 - Versão 3.00/3.00a</para>
+    ///     <para>4.00 - Versão 4.00/4.00a</para>
     /// </summary>
     public enum versao
     {
@@ -186,7 +187,14 @@ namespace CTe.Classes.Servicos.Tipos
         /// </summary>
         [Description("Versão 3.00/3.00a")]
         [XmlEnum("3.00")]
-        ve300
+        ve300,
+
+        /// <summary>
+        /// 4.00 - Versão 4.00/4.00a
+        /// </summary>
+        [Description("Versão 4.00/4.00a")]
+        [XmlEnum("4.00")]
+        ve400
     }
 
     /// <summary>

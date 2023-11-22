@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/20/2023 11:46:02" ReportInfo.Modified="11/17/2023 15:01:51" ReportInfo.CreatorVersion="2023.3.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="cteOSProc" ReferenceName="cteOSProc" DataType="System.Int32" Enabled="true">
+      <Column Name="versao" DataType="System.Int32"/>
+      <Column Name="CTeOS" DataType="System.Int32">
+        <Column Name="versao" DataType="System.Int32"/>
+        <Column Name="InfCte" DataType="System.Int32">
+          <Column Name="versao" DataType="System.Int32"/>
+          <Column Name="Id" DataType="System.String"/>
+          <Column Name="ide" DataType="System.Int32">
+            <Column Name="cUF" DataType="System.Int32"/>
+            <Column Name="cCT" DataType="System.Int32"/>
+            <Column Name="ProxycCT" DataType="System.String"/>
+            <Column Name="CFOP" DataType="System.Int32"/>
+            <Column Name="natOp" DataType="System.String"/>
+            <Column Name="mod" DataType="System.Int32"/>
+            <Column Name="serie" DataType="System.Int16"/>
+            <Column Name="nCT" DataType="System.Int64"/>
+            <Column Name="dhEmi" DataType="System.DateTime"/>
+            <Column Name="ProxydhEmi" DataType="System.String"/>
+            <Column Name="tpImp" DataType="System.Int32"/>
+            <Column Name="tpEmis" DataType="System.Int32"/>
+            <Column Name="cDV" DataType="System.Int32"/>
+            <Column Name="tpAmb" DataType="System.Int32"/>
+            <Column Name="tpCTe" DataType="System.Int32"/>
+            <Column Name="procEmi" DataType="System.Int32"/>
+            <Column Name="verProc" DataType="System.String"/>
+            <Column Name="cMunEnv" DataType="System.Int64"/>
+            <Column Name="xMunEnv" DataType="System.String"/>
+            <Column Name="UFEnv" DataType="System.Int32"/>
+            <Column Name="ProxyUFEnv" DataType="System.String"/>
+            <Column Name="modal" DataType="System.Int32"/>
+            <Column Name="tpServ" DataType="System.Int32"/>
+            <Column Name="indIEToma" DataType="System.Int32"/>
+            <Column Name="cMunIni" DataType="System.Int64"/>
+            <Column Name="xMunIni" DataType="System.String"/>
+            <Column Name="UFIni" DataType="System.Int32"/>
+            <Column Name="ProxyUFIni" DataType="System.String"/>
+            <Column Name="cMunFim" DataType="System.Int64"/>
+            <Column Name="xMunFim" DataType="System.String"/>
+            <Column Name="UFFim" DataType="System.Int32"/>
+            <Column Name="ProxyUFFim" DataType="System.String"/>
+            <BusinessObjectDataSource Name="infPercurso" DataType="System.Int32" Enabled="true">
+              <Column Name="UFPer" DataType="System.Int32"/>
+              <Column Name="ProxyUFPer" DataType="System.String"/>
+            </BusinessObjectDataSource>
+            <Column Name="dhCont" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+            <Column Name="ProxydhCont" DataType="System.String"/>
+            <Column Name="xJust" DataType="System.String"/>
+          </Column>
+          <Column Name="compl" DataType="System.Int32">
+            <Column Name="xCaracAd" DataType="System.String"/>
+            <Column Name="xCaracSer" DataType="System.String"/>
+            <Column Name="xEmi" DataType="System.String"/>
+            <Column Name="xObs" DataType="System.String"/>
+            <BusinessObjectDataSource Name="ObsCont" DataType="System.Int32" Enabled="true">
+              <Column Name="xCampo" DataType="System.String"/>
+              <Column Name="xTexto" DataType="System.String"/>
+            </BusinessObjectDataSource>
+            <BusinessObjectDataSource Name="ObsFisco" DataType="System.Int32" Enabled="true">
+              <Column Name="xCampo" DataType="System.String"/>
+              <Column Name="xTexto" DataType="System.String"/>
+            </BusinessObjectDataSource>
+          </Column>
+          <Column Name="emit" DataType="System.Int32">
+            <Column Name="CNPJ" DataType="System.String"/>
+            <Column Name="IE" DataType="System.String"/>
+            <Column Name="IEST" DataType="System.String"/>
+            <Column Name="xNome" DataType="System.String"/>
+            <Column Name="xFant" DataType="System.String"/>
+            <Column Name="enderEmit" DataType="System.Int32">
+              <Column Name="xLgr" DataType="System.String"/>
+              <Column Name="nro" DataType="System.String"/>
+              <Column Name="xCpl" DataType="System.String"/>
+              <Column Name="xBairro" DataType="System.String"/>
+              <Column Name="cMun" DataType="System.Int64"/>
+              <Column Name="xMun" DataType="System.String"/>
+              <Column Name="CEP" DataType="System.Int64"/>
+              <Column Name="ProxyCEP" DataType="System.String"/>
+              <Column Name="UF" DataType="System.Int32"/>
+              <Column Name="ProxyUF" DataType="System.String"/>
+              <Column Name="fone" DataType="System.String"/>
+            </Column>
+          </Column>
+          <Column Name="toma" DataType="System.Int32">
+            <Column Name="CNPJ" DataType="System.String"/>
+            <Column Name="CPF" DataType="System.String"/>
+            <Column Name="IE" DataType="System.String"/>
+            <Column Name="xNome" DataType="System.String"/>
+            <Column Name="xFant" DataType="System.String"/>
+            <Column Name="fone" DataType="System.String"/>
+            <Column Name="enderToma" DataType="System.Int32">
+              <Column Name="xLgr" DataType="System.String"/>
+              <Column Name="nro" DataType="System.String"/>
+              <Column Name="xCpl" DataType="System.String"/>
+              <Column Name="xBairro" DataType="System.String"/>
+              <Column Name="cMun" DataType="System.Int64"/>
+              <Column Name="xMun" DataType="System.String"/>
+              <Column Name="CEP" DataType="System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="ProxyCEP" DataType="System.String"/>
+              <Column Name="UF" DataType="System.Int32"/>
+              <Column Name="ProxyUF" DataType="System.String"/>
+              <Column Name="cPais" DataType="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="cPaisSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              <Column Name="xPais" DataType="System.String"/>
+            </Column>
+            <Column Name="email" DataType="System.String"/>
+          </Column>
+          <Column Name="vPrest" DataType="System.Int32">
+            <Column Name="vTPrest" DataType="System.Decimal"/>
+            <Column Name="vRec" DataType="System.Decimal"/>
+            <BusinessObjectDataSource Name="Comp" DataType="System.Int32" Enabled="true">
+              <Column Name="xNome" DataType="System.String"/>
+              <Column Name="vComp" DataType="System.Double"/>
+            </BusinessObjectDataSource>
+          </Column>
+          <Column Name="imp" DataType="System.Int32">
+            <Column Name="ICMS" DataType="System.Int32">
+              <Column Name="TipoICMS" DataType="System.Int32">
+                <Column Name="CST" DataType="System.Int32"/>
+              </Column>
+            </Column>
+            <Column Name="vTotTrib" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+            <Column Name="vTotTribSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+            <Column Name="infAdFisco" DataType="System.String"/>
+            <Column Name="ICMSUFFim" DataType="System.Int32">
+              <Column Name="vBCUFFim" DataType="System.Decimal"/>
+              <Column Name="pFCPUFFim" DataType="System.Decimal"/>
+              <Column Name="pICMSUFFim" DataType="System.Decimal"/>
+              <Column Name="pICMSInter" DataType="System.Decimal"/>
+              <Column Name="pICMSInterPart" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="pICMSInterPartSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              <Column Name="vFCPUFFim" DataType="System.Decimal"/>
+              <Column Name="vICMSUFFim" DataType="System.Decimal"/>
+              <Column Name="vICMSUFIni" DataType="System.Decimal"/>
+            </Column>
+            <Column Name="infTribFed" DataType="System.Int32">
+              <Column Name="vPIS" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="vCOFINS" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="vIR" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="vINSS" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="vCSLL" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="vPISSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              <Column Name="vCOFINSSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              <Column Name="vIRSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              <Column Name="vINSSSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              <Column Name="vCSLLSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+            </Column>
+          </Column>
+          <Column Name="infCTeNorm" DataType="System.Int32">
+            <Column Name="infServico" DataType="System.Int32">
+              <Column Name="xDescServ" DataType="System.String"/>
+              <Column Name="infQ" DataType="System.Int32">
+                <Column Name="qCarga" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+                <Column Name="qCargaSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              </Column>
+            </Column>
+            <BusinessObjectDataSource Name="infDocRef" DataType="System.Int32" Enabled="true">
+              <Column Name="nDoc" DataType="System.String"/>
+              <Column Name="serie" DataType="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="serieSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              <Column Name="subserie" DataType="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="subserieSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+              <Column Name="dEmi" DataType="System.DateTime"/>
+              <Column Name="ProxydEmi" DataType="System.String"/>
+              <Column Name="vDoc" DataType="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+              <Column Name="vDocSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+            </BusinessObjectDataSource>
+            <BusinessObjectDataSource Name="seg" DataType="System.Int32" Enabled="true">
+              <Column Name="respSeg" DataType="System.Int32"/>
+              <Column Name="xSeg" DataType="System.String"/>
+              <Column Name="nApol" DataType="System.String"/>
+            </BusinessObjectDataSource>
+            <Column Name="infModal" DataType="System.Int32">
+              <Column Name="versaoModal" DataType="System.Int32"/>
+              <Column Name="ContainerModal" DataType="System.Int32">
+                <Column Name="TAF" DataType="System.String"/>
+                <Column Name="NroRegEstadual" DataType="System.String"/>
+                <Column Name="veic" DataType="System.Int32">
+                  <Column Name="placa" DataType="System.String"/>
+                  <Column Name="RENAVAM" DataType="System.String"/>
+                  <Column Name="prop" DataType="System.Int32">
+                    <Column Name="CPF" DataType="System.String"/>
+                    <Column Name="CNPJ" DataType="System.String"/>
+                    <Column Name="RNTRC" DataType="System.String"/>
+                    <Column Name="TAF" DataType="System.String"/>
+                    <Column Name="NroRegEstadual" DataType="System.String"/>
+                    <Column Name="xNome" DataType="System.String"/>
+                    <Column Name="IE" DataType="System.String"/>
+                    <Column Name="UF" DataType="System.Int32"/>
+                    <Column Name="ProxyUF" DataType="System.String"/>
+                    <Column Name="tpProp" DataType="System.Int32"/>
+                  </Column>
+                  <Column Name="UF" DataType="System.Int32"/>
+                  <Column Name="ProxyUF" DataType="System.String"/>
+                </Column>
+                <Column Name="infFretamento" DataType="System.Int32">
+                  <Column Name="tpFretamento" DataType="System.Int32"/>
+                  <Column Name="dhViagem" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+                  <Column Name="ProxydhEmi" DataType="System.String"/>
+                </Column>
+              </Column>
+            </Column>
+            <Column Name="infCteSub" DataType="System.Int32">
+              <Column Name="chCte" DataType="System.String"/>
+              <Column Name="refCteAnu" DataType="System.String"/>
+              <Column Name="tomaICMS" DataType="System.Int32">
+                <Column Name="refNFe" DataType="System.String"/>
+                <Column Name="refNF" DataType="System.Int32">
+                  <Column Name="CNPJ" DataType="System.String"/>
+                  <Column Name="CPF" DataType="System.String"/>
+                  <Column Name="mod" DataType="System.String"/>
+                  <Column Name="serie" DataType="System.Int16"/>
+                  <Column Name="subserie" DataType="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+                  <Column Name="subserieSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+                  <Column Name="nro" DataType="System.Int32"/>
+                  <Column Name="valor" DataType="System.Decimal"/>
+                  <Column Name="dEmi" DataType="System.DateTime"/>
+                  <Column Name="ProxydEmi" DataType="System.String"/>
+                </Column>
+                <Column Name="refCte" DataType="System.String"/>
+              </Column>
+            </Column>
+          </Column>
+          <Column Name="infCteComp" DataType="System.Int32">
+            <Column Name="chave" DataType="System.String"/>
+            <Column Name="chCTe" DataType="System.String"/>
+          </Column>
+          <Column Name="infCteAnu" DataType="System.Int32">
+            <Column Name="chCte" DataType="System.String"/>
+            <Column Name="dEmi" DataType="System.DateTime"/>
+            <Column Name="ProxydEmi" DataType="System.String"/>
+          </Column>
+          <BusinessObjectDataSource Name="autXml" DataType="System.Int32" Enabled="true">
+            <Column Name="CNPJ" DataType="System.String"/>
+            <Column Name="CPF" DataType="System.String"/>
+          </BusinessObjectDataSource>
+          <Column Name="infRespTec" DataType="System.Int32">
+            <Column Name="CNPJ" DataType="System.String"/>
+            <Column Name="xContato" DataType="System.String"/>
+            <Column Name="email" DataType="System.String"/>
+            <Column Name="fone" DataType="System.String"/>
+            <Column Name="idCSRT" DataType="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+            <Column Name="idCSRTSpecified" DataType="System.Boolean" BindableControl="CheckBox"/>
+            <Column Name="ProxyidCSRT" DataType="System.String"/>
+            <Column Name="hashCSRT" DataType="System.String"/>
+          </Column>
+        </Column>
+        <Column Name="infCTeSupl" DataType="System.Int32">
+          <Column Name="qrCodCTe" DataType="System.String"/>
+        </Column>
+        <Column Name="Signature" DataType="System.Int32">
+          <Column Name="SignedInfo" DataType="System.Int32">
+            <Column Name="CanonicalizationMethod" DataType="System.Int32">
+              <Column Name="Algorithm" DataType="System.String"/>
+            </Column>
+            <Column Name="SignatureMethod" DataType="System.Int32">
+              <Column Name="Algorithm" DataType="System.String"/>
+            </Column>
+            <Column Name="Reference" DataType="System.Int32">
+              <Column Name="URI" DataType="System.String"/>
+              <BusinessObjectDataSource Name="Transforms" DataType="System.Int32" Enabled="true">
+                <Column Name="Algorithm" DataType="System.String"/>
+              </BusinessObjectDataSource>
+              <Column Name="DigestMethod" DataType="System.Int32">
+                <Column Name="Algorithm" DataType="System.String"/>
+              </Column>
+              <Column Name="DigestValue" DataType="System.String"/>
+            </Column>
+          </Column>
+          <Column Name="SignatureValue" DataType="System.String"/>
+          <Column Name="KeyInfo" DataType="System.Int32">
+            <Column Name="X509Data" DataType="System.Int32">
+              <Column Name="X509Certificate" DataType="System.String"/>
+            </Column>
+          </Column>
+        </Column>
+      </Column>
+      <Column Name="protCTe" DataType="System.Int32">
+        <Column Name="versao" DataType="System.Int32"/>
+        <Column Name="infProt" DataType="System.Int32">
+          <Column Name="Id" DataType="System.String"/>
+          <Column Name="tpAmb" DataType="System.Int32"/>
+          <Column Name="verAplic" DataType="System.String"/>
+          <Column Name="chCTe" DataType="System.String"/>
+          <Column Name="dhRecbto" DataType="System.DateTimeOffset"/>
+          <Column Name="ProxydhRecbto" DataType="System.String"/>
+          <Column Name="nProt" DataType="System.String"/>
+          <Column Name="digVal" DataType="System.String"/>
+          <Column Name="cStat" DataType="System.Int32"/>
+          <Column Name="xMotivo" DataType="System.String"/>
+          <Column Name="Signature" DataType="System.Int32">
+            <Column Name="SignedInfo" DataType="System.Int32">
+              <Column Name="CanonicalizationMethod" DataType="System.Int32">
+                <Column Name="Algorithm" DataType="System.String"/>
+              </Column>
+              <Column Name="SignatureMethod" DataType="System.Int32">
+                <Column Name="Algorithm" DataType="System.String"/>
+              </Column>
+              <Column Name="Reference" DataType="System.Int32">
+                <Column Name="URI" DataType="System.String"/>
+                <BusinessObjectDataSource Name="Transforms1" Alias="Transforms" DataType="System.Int32" PropName="Transforms" Enabled="true">
+                  <Column Name="Algorithm" DataType="System.String"/>
+                </BusinessObjectDataSource>
+                <Column Name="DigestMethod" DataType="System.Int32">
+                  <Column Name="Algorithm" DataType="System.String"/>
+                </Column>
+                <Column Name="DigestValue" DataType="System.String"/>
+              </Column>
+            </Column>
+            <Column Name="SignatureValue" DataType="System.String"/>
+            <Column Name="KeyInfo" DataType="System.Int32">
+              <Column Name="X509Data" DataType="System.Int32">
+                <Column Name="X509Certificate" DataType="System.String"/>
+              </Column>
+            </Column>
+          </Column>
+        </Column>
+      </Column>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="1004.45" Guides="283.5,368.55,756">
+      <TextObject Name="Text1" Left="1" Width="736.1" Height="10.9" Text="DECLARO QUE RECEBI OS VOLUMES DESTE CONHECIMENTO EM PERFEITO ESTADO PELO QUE DOU POR CUMPRIDO O PRESENTE CONTRATO DE TRANSPORTE" HorzAlign="Center" Font="Times New Roman, 6pt, style=Bold"/>
+      <LineObject Name="Line2" Left="1.55" Top="37.21" Width="197.45"/>
+      <LineObject Name="Line3" Left="199" Top="1.9" Height="52.25"/>
+      <TextObject Name="Text2" Top="10.9" Width="47.25" Height="21.9" Text="Nome" Font="Times New Roman, 6.75pt"/>
+      <TextObject Name="Text3" Left="0.55" Top="38.8" Width="47.25" Height="17.9" Text="RG" Font="Times New Roman, 6.75pt"/>
+      <LineObject Name="Line1" Left="-1.45" Top="9.45" Width="735.1"/>
+      <LineObject Name="Line4" Top="52.6" Width="735.1"/>
+      <TextObject Name="Text4" Left="-9450" Top="-9450" Width="269.6" Height="12.45" Text="ASSINATURA / CARIMBO" HorzAlign="Center" Font="Times New Roman, 6.75pt"/>
+      <TextObject Name="Text5" Left="207.9" Top="42.25" Width="212.9" Height="12.45" Text="ASSINATURA / CARIMBO" HorzAlign="Center" Font="Times New Roman, 6.75pt"/>
+      <TextObject Name="Text9" Left="459.95" Top="28.35" Width="101.5" Height="14.45" Text="__/__/____    __:__" Font="Arial Narrow, 9pt"/>
+      <TextObject Name="Text6" Left="459.4" Top="13.9" Width="101.95" Height="9.45" Text="CHEGADA DATA/HORA" HorzAlign="Center" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text8" Left="458.95" Top="45.25" Width="101.95" Height="9.45" Text="SAÍDA DATA/HORA" HorzAlign="Center" Font="Times New Roman, 5.25pt"/>
+      <LineObject Name="Line5" Left="453.6" Top="1.45" Height="52.25"/>
+      <LineObject Name="Line6" Left="562.9" Top="1.45" Height="52.25"/>
+      <TextObject Name="Text10" Left="569.83" Top="24.79" Width="18.9" Height="12.45" Text="Nº" Font="Times New Roman, 6.75pt"/>
+      <TextObject Name="Text12" Left="560.93" Top="41.69" Width="37.8" Height="12.45" Text="SÉRIE:" Font="Times New Roman, 6.75pt"/>
+      <TextObject Name="Text27" Left="560.55" Top="9.45" Width="45.36" Height="15.01" Text="MODELO" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 6pt, style=Bold"/>
+      <LineObject Name="Line7" Left="222.5" Top="57.15" Height="176.55"/>
+      <LineObject Name="Line8" Left="0.45" Top="182" Width="312.4"/>
+      <LineObject Name="Line10" Left="116.55" Top="181.55" Height="55.7"/>
+      <TextObject Name="Text20" Left="229.4" Top="194.35" Width="294.06" Height="26.35" Text="Consulta de autencidade no portal nacional do CT-e, no site da Sefaz&#13;&#10;Autorizadora, ou em http://www.cte.fazenda.gov.br/portal" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 7pt, style=Bold"/>
+      <LineObject Name="Line11" Left="287.85" Top="182" Width="255.7"/>
+      <LineObject Name="Line12" Top="-0.05" Width="735.1"/>
+      <LineObject Name="Line13" Left="1.7" Top="236.25" Width="735.1"/>
+      <TextObject Name="Text28" Left="604.8" Top="9.45" Width="29.47" Height="14.79" Text="57" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 8.25pt, style=Bold"/>
+      <TextObject Name="Text29" Left="634.7" Top="9.9" Width="62.59" Height="13.45" Text="CT-e OS" HorzAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
+      <TextObject Name="Text30" Left="600.35" Top="23.35" Width="94.5" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.ide.nCT]" Font="Arial, 10pt"/>
+      <TextObject Name="Text31" Left="600.8" Top="39.25" Width="94.5" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.ide.serie]" Font="Arial, 10pt"/>
+      <LineObject Name="Line14" Left="545.5" Top="56.95" Height="176.55"/>
+      <LineObject Name="Line16" Left="226.4" Top="103.95" Width="321.85"/>
+      <LineObject Name="Line17" Left="222.5" Top="140.3" Width="321.85"/>
+      <TextObject Name="Text21" Left="229.5" Top="141.75" Width="152.2" Height="9.45" Text="CHAVE DE ACESSO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text32" Left="227.95" Top="160.65" Width="311.85" Height="18.9" Text="[Substring( [cteOSProc.CTeOS.InfCte.Id],3)]" Font="Arial, 9pt"/>
+      <TextObject Name="Text22" Left="231.95" Top="66.15" Width="313.51" Height="11.45" Text="DACTE OS" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 9pt, style=Bold"/>
+      <TextObject Name="Text23" Left="222.5" Top="85.05" Width="314.4" Height="11.45" Text="Documento Auxiliar do Conhecimento de Transporte Eletrônico para Outros Serviços" HorzAlign="Center" VertAlign="Center" Font="Times New Roman, 6pt, style=Bold"/>
+      <LineObject Name="Line18" Left="270.85" Top="103.95" Height="36.8"/>
+      <TextObject Name="Text212" Left="231.95" Top="106.95" Width="37.91" Height="16.9" Text="MODELO" HorzAlign="Center" WordWrap="false" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text213" Left="231.95" Top="117.4" Width="35.25" Height="12.9" Text="57" HorzAlign="Center" Font="Times New Roman, 8.25pt, style=Bold"/>
+      <TextObject Name="Text33" Left="383.7" Top="106.95" Width="35.91" Height="7.45" Text="FOLHA" HorzAlign="Center" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text34" Left="382.9" Top="116.33" Width="34.25" Height="12.9" Text="[Page#]/[TotalPages#]" HorzAlign="Center" Font="Times New Roman, 8.25pt, style=Bold"/>
+      <TextObject Name="Text37" Left="422.61" Top="106.95" Width="121.63" Height="7.45" Text="DATA E HORA DE EMISSÃO" HorzAlign="Center" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text38" Left="422.81" Top="116.33" Width="122.08" Height="12.9" Text="[cteOSProc.CTeOS.infCte.ide.dhEmi]" Format="Date" Format.Format="dd/MM/yyyy HH:mm:ss" HorzAlign="Center" Font="Times New Roman, 8.25pt, style=Bold"/>
+      <TextObject Name="Text214" Left="269.75" Top="106.95" Width="37.91" Height="7.45" Text="SÉRIE" HorzAlign="Center" WordWrap="false" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text215" Left="269.75" Top="117.4" Width="35.25" Height="12.9" Text="[cteOSProc.CTeOS.InfCte.ide.serie]" Format="Custom" Format.Format="000" HorzAlign="Center" Font="Times New Roman, 8.25pt, style=Bold"/>
+      <TextObject Name="Text216" Left="308.55" Top="106.95" Width="72.71" Height="7.45" Text="NÚMERO" HorzAlign="Center" WordWrap="false" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text217" Left="308.55" Top="117.4" Width="72.05" Height="12.9" Text="[cteOSProc.CTeOS.infCte.ide.nCT]" HorzAlign="Center" Font="Times New Roman, 8.25pt, style=Bold"/>
+      <LineObject Name="Line19" Left="307.55" Top="103.95" Height="36.8"/>
+      <LineObject Name="Line20" Left="383.15" Top="103.95" Height="36.8"/>
+      <LineObject Name="Line21" Left="420.95" Top="103.95" Height="36.8"/>
+      <LineObject Name="Line22" Top="283.5" Width="735.1"/>
+      <LineObject Name="Line23" Left="384.3" Top="235.8" Height="46.25"/>
+      <TextObject Name="Text14" Left="0.55" Top="184.11" Width="152.2" Height="9.45" Text="TIPO DO CT-E" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text16" Left="130.2" Top="184.11" Width="87.94" Height="9.45" Text="TIPO DO SERVIÇO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text41" Left="-22.35" Top="203.01" Width="125.85" Height="14.45" Text="NORMAL" HorzAlign="Center" Font="Times New Roman, 9.75pt"/>
+      <TextObject Name="Text42" Left="119.75" Top="202.9" Width="97.5" Height="14.45" Text="NORMAL" HorzAlign="Center" Font="Times New Roman, 9.75pt"/>
+      <TextObject Name="Text45" Left="2.45" Top="238.7" Width="133.3" Height="9.45" Text="CFOP - NATUREZA DA OPERAÇÃO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text46" Top="255.7" Width="733.65" Height="27.8" Text="[cteOSProc.CTeOS.infCte.ide.CFOP] - [cteOSProc.CTeOS.infCte.ide.natOp]" Font="Times New Roman, 9pt"/>
+      <TextObject Name="Text26" Left="386.55" Top="256.25" Width="315.63" Height="11.9" Text="[cteOSProc.protCTe.infProt.nProt]  -  [FormatDateTime([cteOSProc.protCTe.infProt.dhRecbto].DateTime,&quot;dd/MM/yyyy HH:mm:ss&quot;)]" HorzAlign="Center" Font="Times New Roman, 8.25pt, style=Bold"/>
+      <TextObject Name="Text25" Left="406.55" Top="240.25" Width="152.2" Height="9.45" Text="PROTOCOLO DE AUTORIZAÇÃO DE USO" Font="Times New Roman, 5.25pt"/>
+      <LineObject Name="Line24" Top="321.3" Width="735.1"/>
+      <LineObject Name="Line25" Left="207.9" Top="283.5" Height="36.8"/>
+      <LineObject Name="Line26" Left="444.15" Top="283.5" Height="36.8"/>
+      <TextObject Name="Text47" Left="-1.55" Top="284.85" Width="133.3" Height="8.45" Text="ORIGEM DA PRESTAÇÃO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text49" Left="-1.1" Top="298.3" Width="204.45" Height="13.45" Text="[cteOSProc.CTeOS.infCte.ide.xMunIni] - [cteOSProc.CTeOS.infCte.ide.ProxyUFIni] - [cteOSProc.CTeOS.infCte.ide.cMunIni]" Font="Times New Roman, 9pt"/>
+      <TextObject Name="Text218" Left="213.8" Top="286.4" Width="133.3" Height="8.45" Text="PERCURSO DO VEICULO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text48" Left="449.6" Top="285.2" Width="133.3" Height="8.45" Text="DESTINO DA PRESTAÇÃO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text50" Left="449.6" Top="299.65" Width="365.1" Height="13.45" Text="[cteOSProc.CTeOS.infCte.ide.xMunFim] - [cteOSProc.CTeOS.infCte.ide.ProxyUFFim] - [cteOSProc.CTeOS.infCte.ide.cMunFim]" Font="Times New Roman, 9pt"/>
+      <LineObject Name="Line27" Top="368.55" Width="735.1"/>
+      <TextObject Name="Text113" Top="322.81" Width="88.5" Height="8.45" Text="TOMADOR DO SERVIÇO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text116" Left="411.25" Top="322.81" Width="50.7" Height="8.45" Text="MUNICÍPIO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text117" Left="631.15" Top="322.81" Width="31.8" Height="8.45" Text="CEP" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text114" Top="336.26" Width="60.15" Height="8.45" Text="ENDEREÇO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text122" Left="527.55" Top="336.26" Width="31.8" Height="8.45" Text="PAÍS" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text115" Top="352.71" Width="46.7" Height="8.45" Text="CNPJ/CPF" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text124" Left="527.2" Top="354.65" Width="46.7" Height="8.45" Text="FONE" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text125" Left="235.15" Top="354.65" Width="93.95" Height="8.45" Text="INSCRIÇÃO ESTADUAL" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text219" Left="103.95" Top="320.85" Width="302.4" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.toma.xNome]" Font="Times New Roman, 6pt, style=Bold"/>
+      <TextObject Name="Text220" Left="47.25" Top="352.65" Width="170.1" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.toma.CNPJ]" Font="Times New Roman, 6pt"/>
+      <TextObject Name="Text221" Left="335.65" Top="354.65" Width="170.1" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.toma.IE]" Font="Times New Roman, 6pt"/>
+      <TextObject Name="Text222" Left="568.9" Top="349.65" Width="122.85" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.toma.fone]" Font="Times New Roman, 6pt, style=Bold"/>
+      <TextObject Name="Text223" Left="463.05" Top="321.3" Width="160.65" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.toma.enderToma.xMun]" Font="Times New Roman, 6pt, style=Bold"/>
+      <TextObject Name="Text224" Left="661.5" Top="321.3" Width="94.5" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.toma.enderToma.CEP]" Font="Times New Roman, 6pt, style=Bold"/>
+      <TextObject Name="Text225" Left="61.15" Top="335.65" Width="349.65" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.toma.enderToma.xLgr]" Font="Times New Roman, 6pt"/>
+      <TextObject Name="Text226" Left="568.9" Top="333.6" Width="122.85" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.toma.enderToma.xPais]" Font="Times New Roman, 6pt, style=Bold"/>
+      <LineObject Name="Line28" Top="396.9" Width="735.1"/>
+      <TextObject Name="Text227" Left="207.9" Top="374.9" Width="320.75" Height="11.65" Text="INFORMAÇÕES DA PRETAÇÃO DE SERVIÇO" Font="Times New Roman, 8pt, style=Bold"/>
+      <LineObject Name="Line29" Top="424.25" Width="735.1"/>
+      <LineObject Name="Line30" Top="453.6" Width="735.1"/>
+      <LineObject Name="Line31" Left="141.75" Top="396.9" Height="27.35"/>
+      <TextObject Name="Text228" Left="7" Top="398.9" Width="65.6" Height="8.45" Text="QUANTIDADE" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text229" Left="160.65" Top="397.9" Width="235.7" Height="8.45" Text="DESCRIÇÃO DO SERVIÇO PRESTADO" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text230" Left="26.25" Top="409.35" Width="37.25" Height="8.45" Text="001" Font="Times New Roman, 6pt"/>
+      <TextObject Name="Text231" Left="176.25" Top="408.35" Width="396.9" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.infCTeNorm.infServico.xDescServ]" Font="Times New Roman, 6pt"/>
+      <TextObject Name="Text232" Left="207.9" Top="434.7" Width="320.75" Height="11.65" Text="COMPONENTES DO VALOR DA PRETAÇÃO DE SERVIÇO" Font="Times New Roman, 8pt, style=Bold"/>
+      <LineObject Name="Line32" Top="491.4" Width="735.1"/>
+      <LineObject Name="Line33" Left="359.1" Top="453.6" Height="36.8"/>
+      <LineObject Name="Line34" Left="-9450" Top="-9450" Height="27.35"/>
+      <LineObject Name="Line35" Left="548.1" Top="453.6" Height="36.8"/>
+      <TextObject Name="Text233" Left="368.55" Top="456.6" Width="65.6" Height="8.45" Text="VALOR TOTAL" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text234" Left="557.55" Top="456.6" Width="122.3" Height="8.45" Text="VALOR A RECEBER" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text235" Left="378" Top="472.5" Width="94.5" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.vPrest.vTPrest]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="," Format.GroupSeparator="" Format.CurrencySymbol="R$ " Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" WordWrap="false" Font="Times New Roman, 8pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text236" Left="576.45" Top="472.5" Width="94.5" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.vPrest.vRec]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="," Format.GroupSeparator="" Format.CurrencySymbol="R$ " Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" WordWrap="false" Font="Times New Roman, 8pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <LineObject Name="Line36" Top="518.2" Width="735.1"/>
+      <TextObject Name="Text237" Left="242.9" Top="499.85" Width="320.75" Height="11.65" Text="INFORMAÇÕES RELATIVAS AO IMPOSTO" Font="Times New Roman, 8pt, style=Bold"/>
+      <LineObject Name="Line37" Top="549" Width="735.1"/>
+      <LineObject Name="Line38" Left="160.65" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line39" Left="226.8" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line40" Left="280.05" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line41" Left="329.3" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line42" Left="376.55" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line43" Left="424.8" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line44" Left="472.05" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line45" Left="523.3" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line46" Left="588.55" Top="519.75" Height="27.35"/>
+      <LineObject Name="Line47" Left="648.8" Top="519.75" Height="27.35"/>
+      <TextObject Name="Text238" Top="519.75" Width="160.1" Height="8.45" Text="CLASSIFICAÇÃO TRIBUTARIA DO SERVIÇO" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text239" Left="160.65" Top="520.75" Width="65.6" Height="8.45" Text="BASE DE CALC." VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <TextObject Name="Text240" Left="226.8" Top="519.75" Width="56.15" Height="8.45" Text="ALIQ ICMS" VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <TextObject Name="Text241" Left="283.5" Top="519.75" Width="46.7" Height="8.45" Text="VL. ICMS" VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <TextObject Name="Text242" Left="330.75" Top="519.75" Width="46.7" Height="8.45" Text="% RED BC" VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <TextObject Name="Text243" Left="378" Top="519.75" Width="46.7" Height="8.45" Text="VAL ST" VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <TextObject Name="Text244" Left="425.25" Top="520.75" Width="46.7" Height="8.45" Text="VALOR INSS" VertAlign="Bottom" Font="Times New Roman, 4.9pt"/>
+      <TextObject Name="Text245" Left="472.5" Top="520.75" Width="46.7" Height="8.45" Text="VALOR PIS" VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <TextObject Name="Text246" Left="525.75" Top="520.75" Width="56.15" Height="8.45" Text="VALOR COF" VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <TextObject Name="Text247" Left="592" Top="519.75" Width="46.7" Height="8.45" Text="VALOR IR" VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <TextObject Name="Text248" Left="650.25" Top="521.75" Width="56.15" Height="8.45" Text="VALOR CSLL" VertAlign="Bottom" Font="Times New Roman, 5.2pt"/>
+      <LineObject Name="Line48" Left="-9450" Top="-9450" Width="735.1"/>
+      <LineObject Name="Line49" Top="576.45" Width="735.1"/>
+      <TextObject Name="Text249" Left="297.9" Top="557.55" Width="320.75" Height="11.65" Text="OBSERVAÇÕES" Font="Times New Roman, 8pt, style=Bold"/>
+      <LineObject Name="Line50" Top="665.4" Width="735.1"/>
+      <TextObject Name="Text250" Left="9.45" Top="592.35" Width="642.6" Height="66.15" Text="[cteOSProc.CTeOS.InfCte.compl.xObs]" Font="Times New Roman, 7pt"/>
+      <TextObject Name="Text251" Left="201.95" Top="676.85" Width="320.75" Height="11.65" Text="INFORMAÇÕES ESPECÍFICAS DO MODAL RODOVIÁRIO" Font="Times New Roman, 8pt, style=Bold"/>
+      <LineObject Name="Line51" Top="694.45" Width="735.1"/>
+      <LineObject Name="Line52" Top="729.65" Width="735.1"/>
+      <LineObject Name="Line53" Left="113.4" Top="694.85" Height="36.8"/>
+      <LineObject Name="Line54" Left="245.25" Top="693.85" Height="36.8"/>
+      <LineObject Name="Line55" Left="368.55" Top="693.3" Height="36.8"/>
+      <LineObject Name="Line56" Left="506.75" Top="695.3" Height="36.8"/>
+      <LineObject Name="Line57" Left="613.7" Top="694.3" Height="36.8"/>
+      <TextObject Name="Text252" Top="699.3" Width="112.85" Height="8.45" Text="TERM AUTOR FRETAMENTO" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text253" Left="115.4" Top="699.3" Width="112.85" Height="8.45" Text="NUM. REGISTRO ESTAD" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text254" Left="251.25" Top="699.3" Width="112.85" Height="8.45" Text="PLACA DO VEICULO" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text255" Left="378" Top="699.3" Width="112.85" Height="8.45" Text="RENAVAN DO VEICULO" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text256" Left="511.75" Top="699.3" Width="112.85" Height="8.45" Text="UF DE LIC DE VEICULO" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text257" Left="613.7" Top="699.3" Width="112.85" Height="8.45" Text="TERM AUTOR FRETAMENTO" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text258" Left="113.4" Top="708.75" Width="132.3" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.infCTeNorm.infModal.ContainerModal.NroRegEstadual]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="0" VertAlign="Center" Font="Times New Roman, 7pt"/>
+      <LineObject Name="Line58" Top="764.55" Width="735.1"/>
+      <LineObject Name="Line59" Left="340.2" Top="728.2" Height="36.8"/>
+      <TextObject Name="Text259" Left="69.25" Top="732.65" Width="112.85" Height="8.45" Text="TIPO DE FRETAMENTO" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text260" Left="396" Top="732.65" Width="112.85" Height="8.45" Text="DT INICIO VIAGEM" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text261" Left="29.15" Top="744.55" Width="154.2" Height="14.45" Text="1 - EVENTUAL" HorzAlign="Center" Font="Times New Roman, 7pt"/>
+      <TextObject Name="Text263" Left="396.9" Top="743.1" Width="245.7" Height="18.9" Text="[cteOSProc.CTeOS.InfCte.infCTeNorm.infModal.ContainerModal.infFretamento.dhViagem]" VertAlign="Center" Font="Times New Roman, 7pt"/>
+      <LineObject Name="Line60" Top="793.8" Width="735.1"/>
+      <TextObject Name="Text266" Left="276.35" Top="774.15" Width="131.75" Height="11.65" Text="SEGURO DA VIAGEM" Font="Times New Roman, 8pt, style=Bold"/>
+      <LineObject Name="Line62" Left="213.65" Top="794.8" Height="36.8"/>
+      <LineObject Name="Line63" Left="466.6" Top="794.8" Height="36.8"/>
+      <TextObject Name="Text267" Left="23.9" Top="796.8" Width="112.85" Height="8.45" Text="RESPONSÁVEL" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text268" Left="245.7" Top="797.8" Width="112.85" Height="8.45" Text="NOME DA SEGURADORA" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <TextObject Name="Text269" Left="500.85" Top="797.8" Width="112.85" Height="8.45" Text="NUMERO DA APOLICE" VertAlign="Bottom" Font="Times New Roman, 5.25pt"/>
+      <LineObject Name="Line66" Left="339.3" Top="834.55" Height="112.4"/>
+      <TextObject Name="Text271" Left="349.75" Top="842" Width="197.9" Height="19.9" Text="RESERVADO AO FISCO" VertAlign="Bottom" Font="Times New Roman, 9pt, style=Bold"/>
+      <TextObject Name="Text270" Left="19.25" Top="843" Width="273.5" Height="18.9" Text="USO EXCLUSIVO DO EMISSOR DO CTEOS" VertAlign="Bottom" Font="Times New Roman, 9pt, style=Bold"/>
+      <LineObject Name="Line64" Left="9.45" Top="831.9" Width="735.1"/>
+      <LineObject Name="Line65" Top="947.75" Width="735.1"/>
+      <TextObject Name="Text272" Left="-9450" Top="-9450" Width="311.85" Height="18.9" Text="[Substring( [cteOSProc.CTeOS.InfCte.Id],3)]" Font="Arial, 9pt"/>
+      <TextObject Name="Text273" Left="208.15" Top="951.15" Width="283.5" Height="18.9" Text="[Substring( [cteOSProc.CTeOS.InfCte.Id],3)]" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 7pt"/>
+      <BarcodeObject Name="BarcodeChave" Left="207.9" Top="974.9" Width="290.52" Height="27.35" AutoSize="false" Text="[Substring( [cteOSProc.CTeOS.InfCte.Id],3)]" ShowText="false" AllowExpressions="true" Barcode="Code128" Barcode.Font="Arial, 8pt" Barcode.AutoEncode="true"/>
+      <BarcodeObject Name="Barcode1" Left="553.9" Top="61.45" Width="148" Height="148" CanShrink="true" Text="[cteOSProc.CTeOS.infCTeSupl.qrCodCTe]" ShowText="false" HideIfNoData="false" AllowExpressions="true" Barcode="QR Code" Barcode.Font="Arial, 11pt" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+      <TextObject Name="Text274" Left="18.9" Top="812.7" Width="69.15" Height="14.45" Text="REMETENTE" HorzAlign="Center" Font="Times New Roman, 7pt"/>
+      <TextObject Name="Text275" Left="3.45" Top="56.7" Width="207.9" Height="37.8" Text="[cteOSProc.CTeOS.InfCte.emit.xNome]" HorzAlign="Center" Font="Arial, 8.5pt, style=Bold"/>
+      <TextObject Name="Text276" Left="3.45" Top="98.05" Width="207.9" Height="18.9" Text="End.: [cteOSProc.CTeOS.InfCte.emit.enderEmit.xLgr] - [cteOSProc.CTeOS.InfCte.emit.enderEmit.nro]" Font="Arial, 7pt"/>
+      <TextObject Name="Text278" Left="3.45" Top="125.4" Width="198.45" Height="18.9" Text="Bairro: [cteOSProc.CTeOS.InfCte.emit.enderEmit.xBairro] - Cidade: [cteOSProc.CTeOS.InfCte.emit.enderEmit.xMun]" Font="Arial, 7pt"/>
+      <TextObject Name="Text280" Left="111.15" Top="149.65" Width="94.5" Height="18.9" Text="Fone: [cteOSProc.CTeOS.InfCte.emit.enderEmit.fone]" Font="Arial, 7pt"/>
+      <TextObject Name="Text281" Left="5.7" Top="148.3" Width="94.5" Height="18.9" Text="UF:  [cteOSProc.CTeOS.InfCte.emit.enderEmit.ProxyUF]" Font="Arial, 7pt"/>
+    </PageHeaderBand>
+  </ReportPage>
+</Report>
